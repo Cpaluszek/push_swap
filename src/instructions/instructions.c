@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:36:44 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/10 11:44:27 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/10 15:57:50 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	swap_stack(t_stack **src)
 void	rotate_stack(t_stack **src)
 {
 	t_stack	*elem;
-	t_stack *first;
-	
+	t_stack	*first;
+
 	elem = *src;
 	first = *src;
 	while (elem && elem->next)
@@ -53,8 +53,8 @@ void	rotate_stack(t_stack **src)
 // Bottom of the stack goes to top
 void	rev_rotate_stack(t_stack **src)
 {
-	t_stack *elem;
-	t_stack *prev;
+	t_stack	*elem;
+	t_stack	*prev;
 
 	elem = *src;
 	while (elem && elem->next)

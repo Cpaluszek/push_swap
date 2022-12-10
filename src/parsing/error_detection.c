@@ -6,11 +6,13 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 09:13:38 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/08 09:26:13 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/10 15:56:47 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#define INT_MIN_STR	"-2147483648"
+#define INT_MAX_STR	"2147483647"
 
 void	check_valid_str(char *s)
 {

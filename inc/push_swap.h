@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:20:07 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/10 11:34:35 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/10 15:57:29 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define PUSH_SWAP_H
 # include "libft.h"
 # include "ft_stack.h"
-// Todo: move to specific location
-# define ERROR_STR		"Error\n"
-# define INT_MIN_STR	"-2147483648"
-# define INT_MAX_STR	"2147483647"
 
 typedef struct s_data
 {

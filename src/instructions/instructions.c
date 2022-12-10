@@ -6,11 +6,12 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:36:44 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/10 15:57:50 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/10 17:08:30 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+// Note: protect functions ?
 
 // Send top of src stack to top of dst
 void	push_to_stack(t_stack **src, t_stack **dst)
@@ -43,25 +44,27 @@ void	rotate_stack(t_stack **src)
 	t_stack	*first;
 
 	elem = *src;
-	first = *src;
+	first = (*src)->next;
 	while (elem && elem->next)
 		elem = elem->next;
-	elem->next = first;
+	elem->next = *src;
 	elem->next->next = NULL;
+	*src = first;
 }
 
 // Bottom of the stack goes to top
 void	rev_rotate_stack(t_stack **src)
 {
-	t_stack	*elem;
+	t_stack	*last;
 	t_stack	*prev;
 
-	elem = *src;
-	while (elem && elem->next)
+	last = *src;
+	while (last && last->next)
 	{
-		prev = elem;
-		elem = elem->next;
+		prev = last;
+		last = last->next;
 	}
 	prev->next = NULL;
-	elem->next = *src;
+	last->next = *src;
+	*src = last;
 }

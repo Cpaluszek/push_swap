@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:36:44 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 12:50:53 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 12:52:01 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	swap_stack(t_list **src)
 }
 
 // Top of the stack goes to bottom
-// Note: find last function ?
 void	rotate_stack(t_list **src)
 {
 	t_list	*elem;

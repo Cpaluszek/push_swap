@@ -14,9 +14,7 @@ SRC_FILES	:=	push_swap.c \
 				sort/sort.c \
 				instructions/instructions.c \
 				utils/utils.c \
-				utils/debug.c \
-				stack/ft_stack_push.c \
-				stack/ft_stacknew.c
+				utils/debug.c
 
 SRCS		:= $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 

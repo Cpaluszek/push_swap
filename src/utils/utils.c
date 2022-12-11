@@ -6,13 +6,11 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:51:36 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/10 09:31:31 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:21:26 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	free_stack(t_stack *stack);
 
 // For each value in array:
 // Find the desired index after sort
@@ -45,23 +43,31 @@ int	*replace_by_index(int *origin, int count)
 	return (indexes);
 }
 
+// Todo: check mallocs protection
 void	init_stacks(t_data *data, int *values)
 {
 	int		i;
-	t_stack	*new;
+	int		*content;
+	t_list	*new;
 
 	data->stack_a = NULL;
-	data->stack_b = NULL;
 	i = data->value_count - 1;
 	while (i >= 0)
 	{
-		new = ft_stacknew(values[i]);
+		content = malloc(sizeof(int));
+		*content = values[i];
 		if (new == NULL)
 		{
 			free_data(data);
 			break ;
 		}
-		ft_stack_push(&data->stack_a, new);
+		new = ft_lstnew(content);
+		if (new == NULL)
+		{
+			free_data(data);
+			break ;
+		}
+		ft_lstadd_front(&data->stack_a, new);
 		i--;
 	}
 	ft_free(values);
@@ -69,19 +75,6 @@ void	init_stacks(t_data *data, int *values)
 
 void	free_data(t_data *data)
 {
-	free_stack(data->stack_a);
-	free_stack(data->stack_b);
-}
-
-// Todo: move to stack directory
-static void	free_stack(t_stack *stack)
-{
-	t_stack	*next;
-
-	while (stack)
-	{
-		next = stack->next;
-		ft_free(stack);
-		stack = next;
-	}	
+	ft_lstclear(&data->stack_a, &free);
+	ft_lstclear(&data->stack_b, &free);
 }

@@ -6,13 +6,14 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:53:06 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 09:29:50 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:23:22 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	*sort_three(t_stack **stack, char *instructions, char *temp);
+static char	*sort_three(t_list **stack, char *instructions);
+static char	*compare_three(t_list **s, int a, int b, int c);
 
 void	begin_sort(t_data *data)
 {
@@ -20,44 +21,52 @@ void	begin_sort(t_data *data)
 
 	instructions = NULL;
 	if (data->value_count == 3)
-		instructions = sort_three(&data->stack_a, instructions, NULL);
+		instructions = sort_three(&data->stack_a, instructions);
 	ft_printf("%s", instructions);
+	ft_printf("------\n");
 	print_stack(data->stack_a);
 }
 
-static char	*sort_three(t_stack **s, char *instructions, char *temp)
+static char	*sort_three(t_list **s, char *instructions)
 {
-	int		two;
-	int		three;
+	int		*one;
+	int		*two;
+	int		*three;
+	char	*temp;
 
-	two = (*s)->next->value;
-	three = (*s)->next->next->value;
-	if ((*s)->value > two && (*s)->value < three)
+	one = (*s)->content;
+	two = (*s)->next->content;
+	three = (*s)->next->next->content;
+	compare_three(s, *one, *two, *three);
+	temp = ft_strjoin(instructions, "rra\n");
+	free(instructions);
+	return (temp);
+}
+
+static char	*compare_three(t_list **s, int a, int b, int c)
+{
+	if (a > b && a < c)
 	{
-		temp = ft_strjoin(instructions, "sa\n");
 		swap_stack(s);
+		return ("sa\n");
 	}
-	else if ((*s)->value > two && two > three)
+	if (a > b && b > c)
 	{
-		temp = ft_strjoin(instructions, "sa\nrra\n");
 		swap_stack(s);
 		rev_rotate_stack(s);
+		return ("sa\nrra\n");
 	}
-	else if ((*s)->value > two && two < three)
+	if (a > b && b < c)
 	{
-		temp = ft_strjoin(instructions, "ra\n");
 		rotate_stack(s);
+		return ("ra\n");
 	}
-	else if ((*s)->value < three && two > three)
+	if (a < c && b > c)
 	{
-		temp = ft_strjoin(instructions, "sa\nra\n");
 		swap_stack(s);
 		rotate_stack(s);
+		return ("sa\nra\n");
 	}
-	else if ((*s)->value < two && two > (*s)->value)
-	{
-		temp = ft_strjoin(instructions, "rra\n");
-		rev_rotate_stack(s);
-	}
-	return (free(instructions), temp);
+	rev_rotate_stack(s);
+	return ("rra\n");
 }

@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:36:44 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/10 17:08:30 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 09:45:18 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,34 @@
 // Note: protect functions ?
 
 // Send top of src stack to top of dst
-void	push_to_stack(t_stack **src, t_stack **dst)
+void	push_to_stack(t_list **src, t_list **dst)
 {
-	t_stack	*temp;
+	t_list	*temp;
 
 	temp = *src;
-	ft_stack_push(dst, *src);
+	ft_lstadd_front(dst, *src);
 	*src = temp;
 }
 
 // Swap to numbers at the top of src
 // NOTE: swap function in libft
-void	swap_stack(t_stack **src)
+void	swap_stack(t_list **src)
 {
-	t_stack	*elem;
-	int		tmp;
+	t_list	*elem;
+	void	*tmp;
 
 	elem = *src;
-	tmp = elem->next->value;
-	elem->next->value = elem->value;
-	elem->value = tmp;
+	tmp = elem->next->content;
+	elem->next->content = elem->content;
+	elem->content = tmp;
 }
 
 // Top of the stack goes to bottom
 // Note: find last function ?
-void	rotate_stack(t_stack **src)
+void	rotate_stack(t_list **src)
 {
-	t_stack	*elem;
-	t_stack	*first;
+	t_list	*elem;
+	t_list	*first;
 
 	elem = *src;
 	first = (*src)->next;
@@ -53,10 +53,10 @@ void	rotate_stack(t_stack **src)
 }
 
 // Bottom of the stack goes to top
-void	rev_rotate_stack(t_stack **src)
+void	rev_rotate_stack(t_list **src)
 {
-	t_stack	*last;
-	t_stack	*prev;
+	t_list	*last;
+	t_list	*prev;
 
 	last = *src;
 	while (last && last->next)

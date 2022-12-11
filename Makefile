@@ -12,6 +12,8 @@ SRC_FILES	:=	push_swap.c \
 				parsing/parsing.c \
 				parsing/error_detection.c \
 				sort/sort.c \
+				sort/sort_three.c \
+				sort/sort_five.c \
 				instructions/instructions.c \
 				utils/utils.c \
 				utils/debug.c

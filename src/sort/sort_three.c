@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 11:39:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 11:40:25 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:42:31 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*compare_three(t_list **s, int a, int b, int c);
 
-char	*sort_three(t_list **s, char *instructions)
+char	*sort_three(t_list **s, char *operations)
 {
 	int		*one;
 	int		*two;
@@ -24,8 +24,8 @@ char	*sort_three(t_list **s, char *instructions)
 	one = (*s)->content;
 	two = (*s)->next->content;
 	three = (*s)->next->next->content;
-	temp = ft_strjoin(instructions, compare_three(s, *one, *two, *three));
-	free(instructions);
+	temp = ft_strjoin(operations, compare_three(s, *one, *two, *three));
+	free(operations);
 	return (temp);
 }
 

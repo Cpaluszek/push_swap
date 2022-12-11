@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:20:07 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 09:43:38 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:40:41 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int		*parse_str(char *str, t_data *data);
 int		*get_array(char **nbrs, int count);
 
 /*	Sort	*/
-void	begin_sort(t_data *data);
+void	init_sort(t_data *data);
+char	*sort_three(t_list **stack, char *instructions);
 
 /*	Instructions	*/
 void	push_to_stack(t_list **src, t_list **dst);

@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 11:39:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 11:42:31 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 12:49:46 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,9 @@ char	*sort_three(t_list **s, char *operations)
 	return (temp);
 }
 
-// Note: expand conditions with all tests ?
-// a-b - b-c - c-a
 static char	*compare_three(t_list **s, int a, int b, int c)
 {
-	if (a > b && a < c)
+	if (a > b && b < c && c > a)
 	{
 		swap_stack(s);
 		return ("sa\n");
@@ -44,12 +42,12 @@ static char	*compare_three(t_list **s, int a, int b, int c)
 		rev_rotate_stack(s);
 		return ("sa\nrra\n");
 	}
-	if (a > b && b < c)
+	if (a > b && b < c && c < a)
 	{
 		rotate_stack(s);
 		return ("ra\n");
 	}
-	if (a < c && b > c)
+	if (a < b && b > c && c > a)
 	{
 		swap_stack(s);
 		rotate_stack(s);

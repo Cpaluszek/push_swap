@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:53:06 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 11:23:22 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:32:25 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static char	*sort_three(t_list **stack, char *instructions);
 static char	*compare_three(t_list **s, int a, int b, int c);
 
+// Todo: sort 2 ?
 void	begin_sort(t_data *data)
 {
 	char	*instructions;
@@ -37,8 +38,7 @@ static char	*sort_three(t_list **s, char *instructions)
 	one = (*s)->content;
 	two = (*s)->next->content;
 	three = (*s)->next->next->content;
-	compare_three(s, *one, *two, *three);
-	temp = ft_strjoin(instructions, "rra\n");
+	temp = ft_strjoin(instructions, compare_three(s, *one, *two, *three));
 	free(instructions);
 	return (temp);
 }

@@ -6,12 +6,14 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:56:18 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 09:40:17 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 13:59:44 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+
+static void	print_stack(t_list *stack);
 
 void	print_array(int	*array, int count)
 {
@@ -25,7 +27,15 @@ void	print_array(int	*array, int count)
 	}
 }
 
-void	print_stack(t_list *stack)
+void	print_stacks(t_data *data)
+{
+	printf("[A]\n");
+	print_stack(data->stack_a);
+	printf("[B]\n");
+	print_stack(data->stack_b);
+}
+
+static void	print_stack(t_list *stack)
 {
 	while (stack)
 	{

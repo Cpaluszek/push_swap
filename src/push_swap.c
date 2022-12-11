@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:15:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 11:40:41 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 13:16:21 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 	init_stacks(&data, values);
 	if (data.stack_a == NULL)
 		return (0);
-	print_stack(data.stack_a);
+	print_stacks(&data);
 	ft_printf("------\n");
 	init_sort(&data);
 	free_data(&data);

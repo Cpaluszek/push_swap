@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:36:44 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 12:52:01 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 12:57:17 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 // Send top of src stack to top of dst
 void	push_to_stack(t_list **src, t_list **dst)
 {
-	t_list	*temp;
+	t_list	*pushed;
 
-	temp = *src;
-	ft_lstadd_front(dst, *src);
-	*src = temp;
+	pushed = *src;
+	*src = (*src)->next;
+	ft_lstadd_front(dst, pushed);
 }
 
 // Swap to numbers at the top of src

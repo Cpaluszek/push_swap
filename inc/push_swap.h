@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:20:07 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 11:43:08 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 12:58:29 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ int		*replace_by_index(int *origin, int count);
 
 /*	Debug	*/
 void	print_array(int *array, int count);
-void	print_stack(t_list *stack);
+void	print_stacks(t_data *data);
 
 #endif

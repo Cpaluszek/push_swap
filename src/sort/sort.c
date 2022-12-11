@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:53:06 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 11:42:19 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 13:16:29 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	init_sort(t_data *data)
 		operations = sort_five(&data->stack_a, &data->stack_b, operations);
 	ft_printf("%s", operations);
 	ft_printf("------\n");
-	print_stack(data->stack_a);
+	print_stacks(data);
 }

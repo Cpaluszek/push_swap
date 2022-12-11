@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:36:44 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 09:45:18 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:33:28 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,8 @@ void	rotate_stack(t_list **src)
 	t_list	*elem;
 	t_list	*first;
 
-	elem = *src;
 	first = (*src)->next;
-	while (elem && elem->next)
-		elem = elem->next;
+	elem = ft_lstlast(*src);
 	elem->next = *src;
 	elem->next->next = NULL;
 	*src = first;

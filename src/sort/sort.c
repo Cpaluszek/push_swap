@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:53:06 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 11:32:25 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:37:16 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ static char	*sort_three(t_list **s, char *instructions)
 	return (temp);
 }
 
+// Note: expand conditions with all tests ?
+// a-b - b-c - c-a
 static char	*compare_three(t_list **s, int a, int b, int c)
 {
 	if (a > b && a < c)

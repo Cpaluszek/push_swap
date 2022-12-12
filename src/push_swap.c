@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:15:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 09:57:08 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:03:45 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 // 		smallest on top
 // PRINT:
 // instruction\n
+// Todo: if already sort return 0 and not -1
 int	main(int argc, char **argv)
 {
 	t_data	data;
@@ -52,8 +53,6 @@ int	main(int argc, char **argv)
 	init_stacks(&data, values);
 	if (data.stack_a == NULL)
 		return (0);
-	print_stacks(&data);
-	ft_printf("------\n");
 	init_sort(&data);
 	free_data(&data);
 	return (0);
@@ -61,6 +60,6 @@ int	main(int argc, char **argv)
 
 void	arg_error(void)
 {
-	ft_printf_fd(STDERR_FILENO, ERROR_STR);
+	ft_printf_fd(STDOUT_FILENO, ERROR_STR);
 	exit(-1);
 }

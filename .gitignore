@@ -1,2 +1,4 @@
 build/*
 push_swap
+*.py
+checker_Mac

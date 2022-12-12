@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:20:07 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 13:52:14 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:47:28 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_data
 // TODO: define instructions strings
 /*	Parsing	*/
 int		*parse_args(int argc, char **argv, t_data *data);
-int		*parse_str(char *str, t_data *data, int i);
+int		*parse_str(char *str, t_data *data);
 int		*get_array(char **nbrs, int count);
 
 /*	Sort	*/

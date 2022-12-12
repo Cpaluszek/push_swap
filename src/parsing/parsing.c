@@ -6,11 +6,13 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:58:14 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 13:52:33 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:47:56 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	check_split_args(t_data *data, char **nbrs);
 
 int	*parse_args(int argc, char **argv, t_data *data)
 {
@@ -34,11 +36,13 @@ int	*parse_args(int argc, char **argv, t_data *data)
 	return (values);
 }
 
-int	*parse_str(char *str, t_data *data, int i)
+int	*parse_str(char *str, t_data *data)
 {
 	char	**nbrs;
 	int		*values;
+	int		i;
 
+	i = 0;
 	nbrs = ft_split(str, ' ');
 	if (nbrs == NULL)
 		exit(-1);
@@ -47,12 +51,7 @@ int	*parse_str(char *str, t_data *data, int i)
 		free(nbrs);
 		arg_error();
 	}
-	while (nbrs[i])
-	{
-		check_valid_str(nbrs[i]);
-		check_int_overflow(nbrs[i++]);
-		data->value_count++;
-	}
+	check_split_args(data, nbrs);
 	values = get_array(nbrs, data->value_count);
 	i = 0;
 	while (nbrs && nbrs[i])
@@ -64,6 +63,19 @@ int	*parse_str(char *str, t_data *data, int i)
 		arg_error();
 	}
 	return (values);
+}
+
+static void	check_split_args(t_data *data, char **nbrs)
+{
+	int	i;
+
+	i = 0;
+	while (nbrs[i])
+	{
+		check_valid_str(nbrs[i]);
+		check_int_overflow(nbrs[i++]);
+		data->value_count++;
+	}
 }
 
 int	*get_array(char **nbrs, int count)

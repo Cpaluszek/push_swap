@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:58:14 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/10 12:56:29 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 09:55:47 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,34 @@ int	*get_array(char **nbrs, int count)
 		i++;
 	}
 	return (values);
+}
+
+// Todo: check mallocs protection
+void	init_stacks(t_data *data, int *values)
+{
+	int		i;
+	int		*content;
+	t_list	*new;
+
+	data->stack_a = NULL;
+	i = data->value_count - 1;
+	while (i >= 0)
+	{
+		content = malloc(sizeof(int));
+		*content = values[i];
+		if (new == NULL)
+		{
+			free_data(data);
+			break ;
+		}
+		new = ft_lstnew(content);
+		if (new == NULL)
+		{
+			free_data(data);
+			break ;
+		}
+		ft_lstadd_front(&data->stack_a, new);
+		i--;
+	}
+	ft_free(values);
 }

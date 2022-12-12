@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:56:18 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 13:59:44 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 09:53:49 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,15 @@ void	print_stacks(t_data *data)
 
 static void	print_stack(t_list *stack)
 {
+	printf("> ");
 	while (stack)
 	{
-		printf("%d\n", *(int *)(stack->content));
+		printf("%d", *(int *)(stack->content));
 		stack = stack->next;
+		if (stack)
+			printf("->");
 	}
+	printf("\n");
 }
 
 // void	print_stack(t_stack *stack)

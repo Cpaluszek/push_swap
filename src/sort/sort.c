@@ -6,13 +6,13 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:53:06 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 13:16:29 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 09:54:01 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Todo: sort 2 ?
+// Todo: sort 2
 void	init_sort(t_data *data)
 {
 	char	*operations;

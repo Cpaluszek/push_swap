@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:20:07 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 12:58:29 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 09:57:08 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_data(t_data *data);
 /*	Error Detection	*/
 void	check_valid_str(char *str);
 void	check_int_overflow(char *s);
-int		check_sort(int *array, int size);
+int		check_args_sort(int *array, int size);
 int		check_duplicates(int *array, int size);
 int		*replace_by_index(int *origin, int count);
 

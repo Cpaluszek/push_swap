@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 09:13:38 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/10 15:56:47 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 09:57:09 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	check_int_overflow(char *s)
 		arg_error();
 }
 
-int	check_sort(int	*array, int size)
+int	check_args_sort(int	*array, int size)
 {
 	int	i;
 

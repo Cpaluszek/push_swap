@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 09:13:38 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 09:57:09 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 13:51:46 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,15 @@ void	check_valid_str(char *s)
 	int	i;
 
 	i = 0;
+	if (s[i] == '\0')
+		arg_error();
 	while (s[i] && (ft_isdigit(s[i]) || ft_isspace(s[i]) || s[i] == '-'))
+	{
+		if ((s[i] == '-') && ((i > 0 && !ft_isspace(s[i - 1]))
+				|| (!s[i + 1] || !ft_isdigit(s[i + 1]))))
+			break ;
 		i++;
+	}
 	if (s[i] != '\0')
 		arg_error();
 	check_int_overflow(s);

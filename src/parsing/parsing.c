@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:58:14 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 09:55:47 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 13:52:33 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,19 @@ int	*parse_args(int argc, char **argv, t_data *data)
 	return (values);
 }
 
-int	*parse_str(char *str, t_data *data)
+int	*parse_str(char *str, t_data *data, int i)
 {
-	int		i;
 	char	**nbrs;
 	int		*values;
 
 	nbrs = ft_split(str, ' ');
 	if (nbrs == NULL)
 		exit(-1);
-	i = 0;
+	if (nbrs[i] == NULL)
+	{
+		free(nbrs);
+		arg_error();
+	}
 	while (nbrs[i])
 	{
 		check_valid_str(nbrs[i]);

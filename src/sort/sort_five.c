@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 11:43:18 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 13:25:20 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:44:25 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 static char	*push_lowest(t_list **stack_a, t_list **stack_b, char *operations);
 
-// Note: push smallest values to stack b?
 char	*sort_five(t_list **stack_a, t_list **stack_b, char *operations)
 {
-	// Push smallest to B
 	operations = push_lowest(stack_a, stack_b, operations);
 	operations = push_lowest(stack_a, stack_b, operations);
-	operations = sort_three(stack_a, operations);
+	if (!is_sorted(*stack_a))
+		operations = sort_three(stack_a, operations);
 	push_to_stack(stack_b, stack_a);
 	push_to_stack(stack_b, stack_a);
 	operations = ft_strjoin(operations, "pa\npa\n");
 	return (operations);
 }
 
-static char *push_lowest(t_list **stack_a, t_list **stack_b, char *operations)
+static char	*push_lowest(t_list **stack_a, t_list **stack_b, char *operations)
 {
 	int		index;
 	int		min;

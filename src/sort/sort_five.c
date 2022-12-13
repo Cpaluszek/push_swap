@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 11:43:18 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 10:24:00 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:30:48 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*push_lowest(t_list **stack_a, t_list **stack_b, char *operations)
 	int		min;
 
 	get_min_index(stack_a, &min, &index);
-	while (*(int *)(*stack_a)->content != min)
+	while (get_lst_int_value(*stack_a) != min)
 	{
 		if (index - (ft_lstsize(*stack_a) / 2) > 0)
 		{

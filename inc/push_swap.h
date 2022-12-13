@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:20:07 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 10:36:31 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:27:27 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ char	*sort_five(t_list **stack_a, t_list **stack_b, char *operations);
 char	*radix_sort(t_list **stack_a, t_list **stack_b, char *operations);
 void	get_min_index(t_list **stack, int *min, int *index);
 void	get_max_index(t_list **stack, int *max, int *index);
-int		get_bits_count(int number);
 
 /*	Instructions	*/
 void	push_to_stack(t_list **src, t_list **dst);
@@ -46,6 +45,7 @@ void	rev_rotate_stack(t_list **src);
 
 /*	Utils	*/
 void	arg_error(void);
+int		get_lst_int_value(t_list *stack);
 void	init_stacks(t_data *data, int *values);
 void	free_data(t_data *data);
 

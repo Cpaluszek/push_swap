@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:51:36 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 09:55:36 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:26:35 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ int	*replace_by_index(int *origin, int count)
 	}
 	ft_free(origin);
 	return (indexes);
+}
+
+int	get_lst_int_value(t_list *stack)
+{
+	return (*(int *)stack->content);
 }
 
 void	free_data(t_data *data)

@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 10:21:49 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 10:37:00 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:31:07 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	get_min_index(t_list **stack, int *min, int *index)
 	i = 0;
 	*index = 0;
 	st = *stack;
-	*min = *(int *)st->content;
+	*min = get_lst_int_value(st);
 	while (st)
 	{
-		if (*(int *)st->content < *min)
+		if (get_lst_int_value(st) < *min)
 		{
-			*min = *(int *)st->content;
+			*min = get_lst_int_value(st);
 			*index = i;
 		}
 		st = st->next;
@@ -41,28 +41,15 @@ void	get_max_index(t_list **stack, int *max, int *index)
 	i = 0;
 	*index = 0;
 	st = *stack;
-	*max = *(int *)st->content;
+	*max = get_lst_int_value(st);
 	while (st)
 	{
-		if (*(int *)st->content > *max)
+		if (get_lst_int_value(st) > *max)
 		{
-			*max = *(int *)st->content;
+			*max = get_lst_int_value(st);
 			*index = i;
 		}
 		st = st->next;
 		i++;
 	}
-}
-
-int	get_bits_count(int number)
-{
-	int bits;
-
-	bits = 0;
-	while (number > 0)
-	{
-		number /= 2;
-		bits++;
-	}
-	return (bits);
 }

@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:53:06 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 10:52:05 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:28:40 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ void	init_sort(t_data *data)
 	else if (data->value_count == 5)
 		operations = sort_five(&data->stack_a, &data->stack_b, operations);
 	else
-	{
-		// print_stacks(data);
 		operations = radix_sort(&data->stack_a, &data->stack_b, operations);
-	}
 	ft_printf("%s", operations);
 }
 
@@ -36,7 +33,7 @@ int	is_sorted(t_list *stack)
 {
 	while (stack && stack->next)
 	{
-		if (*(int *)(stack->content) > *(int *)(stack->next->content))
+		if (get_lst_int_value(stack) > get_lst_int_value(stack->next))
 			return (0);
 		stack = stack->next;
 	}

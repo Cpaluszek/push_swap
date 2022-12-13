@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 11:39:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 12:43:59 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:44:54 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static char	*compare_three(t_list **s, int a, int b, int c);
 
-//NOTE: is temp useful?
 char	*sort_three(t_list **s, char *operations)
 {
 	int		*one;

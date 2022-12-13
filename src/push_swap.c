@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:15:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 12:39:52 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:55:00 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #define ERROR_STR "Error\n"
 
 // Todo: if already sort return 0 and not -1
+// Todo: check leaks
 int	main(int argc, char **argv)
 {
 	t_data	data;
@@ -26,16 +27,17 @@ int	main(int argc, char **argv)
 		values = parse_str(argv[1], &data);
 	else
 		values = parse_args(argc, argv, &data);
-	if (values == NULL || check_args_sort(values, data.value_count))
-	{
-		if (values)
-			ft_free(values);
+	if (values == NULL)
 		return (-1);
+	if (check_args_sort(values, data.value_count))
+	{
+		free(values);
+		return (0);
 	}
 	values = replace_by_index(values, data.value_count);
 	init_stacks(&data, values);
 	if (data.stack_a == NULL)
-		return (0);
+		return (-1);
 	init_sort(&data);
 	free_data(&data);
 	return (0);

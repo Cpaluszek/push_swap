@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:58:14 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 15:47:56 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:55:23 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,5 @@ void	init_stacks(t_data *data, int *values)
 		ft_lstadd_front(&data->stack_a, new);
 		i--;
 	}
-	ft_free(values);
+	free(values);
 }

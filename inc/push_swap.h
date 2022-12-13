@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:20:07 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 11:27:27 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:56:43 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ char	*sort_three(t_list **stack, char *operations);
 char	*sort_five(t_list **stack_a, t_list **stack_b, char *operations);
 char	*radix_sort(t_list **stack_a, t_list **stack_b, char *operations);
 void	get_min_index(t_list **stack, int *min, int *index);
-void	get_max_index(t_list **stack, int *max, int *index);
 
 /*	Instructions	*/
 void	push_to_stack(t_list **src, t_list **dst);

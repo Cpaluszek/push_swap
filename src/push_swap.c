@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:15:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 12:38:09 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:39:52 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,6 @@
 #include <unistd.h>
 #define ERROR_STR "Error\n"
 
-// PARSING:
-//		Positive or negative numbers
-//		No duplicates
-// ARGS:
-//		1st arg - top of the stack
-// 		./push_swap 1 2 3 4 5 6
-// 		./push_swap "1 2 3 4 5 6"
-//
-// ERRORS:
-//		No args return and print nothing
-//		Already sort -> print nothing
-//		Wrong parameters print `Error\n`
-//
-// SORT:
-// 		smallest on top
-// PRINT:
-// instruction\n
 // Todo: if already sort return 0 and not -1
 int	main(int argc, char **argv)
 {

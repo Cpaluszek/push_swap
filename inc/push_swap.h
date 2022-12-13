@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:20:07 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 14:30:19 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:42:13 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct s_data
 }	t_data;
 
 // TODO: check for static function
-// TODO: define instructions strings
 /*	Parsing	*/
 int		*parse_args(int argc, char **argv, t_data *data);
 int		*parse_str(char *str, t_data *data);

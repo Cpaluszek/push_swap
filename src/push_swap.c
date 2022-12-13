@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:15:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 13:08:10 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:42:08 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #define ERROR_STR "Error\n"
 
 // Todo: if already sort return 0 and not -1
-// Todo: check leaks
-// - strjoin !
 int	main(int argc, char **argv)
 {
 	t_data	data;

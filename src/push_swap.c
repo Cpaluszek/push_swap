@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:15:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 13:53:09 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:38:09 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (-1);
 	if (argc == 2)
-		values = parse_str(argv[1], &data, 0);
+		values = parse_str(argv[1], &data);
 	else
 		values = parse_args(argc, argv, &data);
 	if (values == NULL || check_args_sort(values, data.value_count))

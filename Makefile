@@ -14,6 +14,8 @@ SRC_FILES	:=	push_swap.c \
 				sort/sort.c \
 				sort/sort_three.c \
 				sort/sort_five.c \
+				sort/radix_sort.c \
+				sort/sort_utils.c \
 				instructions/instructions.c \
 				utils/utils.c \
 				utils/debug.c

@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:53:06 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 13:27:35 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 10:52:05 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@ void	init_sort(t_data *data)
 	operations = NULL;
 	if (data->value_count == 2)
 		operations = "sa\n";
-	if (data->value_count == 3)
+	else if (data->value_count == 3)
 		operations = sort_three(&data->stack_a, operations);
-	if (data->value_count == 5)
+	else if (data->value_count == 5)
 		operations = sort_five(&data->stack_a, &data->stack_b, operations);
+	else
+	{
+		// print_stacks(data);
+		operations = radix_sort(&data->stack_a, &data->stack_b, operations);
+	}
 	ft_printf("%s", operations);
 }
 

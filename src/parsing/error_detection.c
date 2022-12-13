@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 09:13:38 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/12 13:51:46 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 13:04:59 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #define INT_MIN_STR	"-2147483648"
 #define INT_MAX_STR	"2147483647"
 
-void	check_valid_str(char *s)
+int	check_valid_str(char *s)
 {
 	int	i;
 
 	i = 0;
 	if (s[i] == '\0')
-		arg_error();
+		return (0);
 	while (s[i] && (ft_isdigit(s[i]) || ft_isspace(s[i]) || s[i] == '-'))
 	{
 		if ((s[i] == '-') && ((i > 0 && !ft_isspace(s[i - 1]))
@@ -29,21 +29,22 @@ void	check_valid_str(char *s)
 		i++;
 	}
 	if (s[i] != '\0')
-		arg_error();
-	check_int_overflow(s);
+		return (0);
+	return (1);
 }
 
-void	check_int_overflow(char *s)
+int	check_int_overflow(char *s)
 {
 	int	len;
 
 	len = ft_strlen(s);
 	if (len < 10)
-		return ;
+		return (0);
 	if (s[0] == '-' && ft_strncmp(INT_MIN_STR, s, len) < 0)
-		arg_error();
+		return (1);
 	else if (ft_strncmp(INT_MAX_STR, s, len) < 0)
-		arg_error();
+		return (1);
+	return (0);
 }
 
 int	check_args_sort(int	*array, int size)

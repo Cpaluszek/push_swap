@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:58:14 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 12:55:23 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 13:08:52 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,17 @@ int	*parse_args(int argc, char **argv, t_data *data)
 	i = 1;
 	while (i < argc)
 	{
-		check_valid_str(argv[i]);
-		check_int_overflow(argv[i]);
+		if (!check_valid_str(argv[i]) || check_int_overflow(argv[i]))
+			arg_error();
 		i++;
 	}
 	data->value_count = argc - 1;
 	values = get_array(&argv[1], data->value_count);
+	if (values == NULL)
+		exit(-1);
 	if (check_duplicates(values, data->value_count))
 	{
-		ft_free(values);
+		free(values);
 		arg_error();
 	}
 	return (values);
@@ -72,8 +74,14 @@ static void	check_split_args(t_data *data, char **nbrs)
 	i = 0;
 	while (nbrs[i])
 	{
-		check_valid_str(nbrs[i]);
-		check_int_overflow(nbrs[i++]);
+		if (!check_valid_str(nbrs[i]) || check_int_overflow(nbrs[i++]))
+		{
+			i = 0;
+			while (nbrs[i])
+				free(nbrs[i]);
+			free(nbrs);
+			arg_error();
+		}
 		data->value_count++;
 	}
 }
@@ -95,7 +103,6 @@ int	*get_array(char **nbrs, int count)
 	return (values);
 }
 
-// Todo: check mallocs protection
 void	init_stacks(t_data *data, int *values)
 {
 	int		i;
@@ -107,12 +114,12 @@ void	init_stacks(t_data *data, int *values)
 	while (i >= 0)
 	{
 		content = malloc(sizeof(int));
-		*content = values[i];
-		if (new == NULL)
+		if (content == NULL)
 		{
 			free_data(data);
 			break ;
 		}
+		*content = values[i];
 		new = ft_lstnew(content);
 		if (new == NULL)
 		{

@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:20:07 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 14:42:13 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:44:55 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_data
 /*	Parsing	*/
 int		*parse_args(int argc, char **argv, t_data *data);
 int		*parse_str(char *str, t_data *data);
-int		*get_array(char **nbrs, int count);
 
 /*	Sort	*/
 void	init_sort(t_data *data);
@@ -53,9 +52,5 @@ int		check_int_overflow(char *s);
 int		check_args_sort(int *array, int size);
 int		check_duplicates(int *array, int size);
 int		*replace_by_index(int *origin, int count);
-
-/*	Debug	*/
-void	print_array(int *array, int count);
-void	print_stacks(t_data *data);
 
 #endif

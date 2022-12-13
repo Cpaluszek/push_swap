@@ -6,13 +6,14 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:58:14 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 13:24:32 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:44:16 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static void	check_split_args(t_data *data, char **nbrs);
+static int	*get_array(char **nbrs, int count);
 
 int	*parse_args(int argc, char **argv, t_data *data)
 {
@@ -86,7 +87,7 @@ static void	check_split_args(t_data *data, char **nbrs)
 	}
 }
 
-int	*get_array(char **nbrs, int count)
+static int	*get_array(char **nbrs, int count)
 {
 	int	*values;
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:15:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 14:43:17 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:43:43 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <unistd.h>
 #define ERROR_STR "Error\n"
 
-// Todo: if already sort return 0 and not -1
 int	main(int argc, char **argv)
 {
 	t_data	data;

@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:15:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 14:42:08 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:43:17 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-// NOTE: stderr or stdout
 void	arg_error(void)
 {
-	ft_printf_fd(STDOUT_FILENO, ERROR_STR);
+	ft_printf_fd(STDERR_FILENO, ERROR_STR);
 	exit(-1);
 }

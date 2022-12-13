@@ -6,27 +6,22 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:53:06 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 11:28:40 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:41:13 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Todo: sort 2
 void	init_sort(t_data *data)
 {
-	char	*operations;
-
-	operations = NULL;
 	if (data->value_count == 2)
-		operations = "sa\n";
+		ft_printf("sa\n");
 	else if (data->value_count == 3)
-		operations = sort_three(&data->stack_a, operations);
+		sort_three(&data->stack_a);
 	else if (data->value_count == 5)
-		operations = sort_five(&data->stack_a, &data->stack_b, operations);
+		sort_five(&data->stack_a, &data->stack_b);
 	else
-		operations = radix_sort(&data->stack_a, &data->stack_b, operations);
-	ft_printf("%s", operations);
+		radix_sort(&data->stack_a, &data->stack_b);
 }
 
 int	is_sorted(t_list *stack)

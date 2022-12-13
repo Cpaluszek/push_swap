@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:58:14 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 13:08:52 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 13:24:32 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,9 @@ void	init_stacks(t_data *data, int *values)
 	t_list	*new;
 
 	data->stack_a = NULL;
+	data->stack_b = NULL;
 	i = data->value_count - 1;
-	while (i >= 0)
+	while (i-- >= 0)
 	{
 		content = malloc(sizeof(int));
 		if (content == NULL)
@@ -119,7 +120,7 @@ void	init_stacks(t_data *data, int *values)
 			free_data(data);
 			break ;
 		}
-		*content = values[i];
+		*content = values[i + 1];
 		new = ft_lstnew(content);
 		if (new == NULL)
 		{
@@ -127,7 +128,6 @@ void	init_stacks(t_data *data, int *values)
 			break ;
 		}
 		ft_lstadd_front(&data->stack_a, new);
-		i--;
 	}
 	free(values);
 }

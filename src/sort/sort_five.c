@@ -6,27 +6,27 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 11:43:18 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 11:30:48 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:35:43 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	*push_lowest(t_list **stack_a, t_list **stack_b, char *operations);
+static void	push_lowest(t_list **stack_a, t_list **stack_b);
 
-char	*sort_five(t_list **stack_a, t_list **stack_b, char *operations)
+void	sort_five(t_list **stack_a, t_list **stack_b)
 {
-	operations = push_lowest(stack_a, stack_b, operations);
-	operations = push_lowest(stack_a, stack_b, operations);
+	push_lowest(stack_a, stack_b);
+	push_lowest(stack_a, stack_b);
 	if (!is_sorted(*stack_a))
-		operations = sort_three(stack_a, operations);
+		sort_three(stack_a);
 	push_to_stack(stack_b, stack_a);
+	ft_printf("pa\n");
 	push_to_stack(stack_b, stack_a);
-	operations = ft_strjoin(operations, "pa\npa\n");
-	return (operations);
+	ft_printf("pa\n");
 }
 
-static char	*push_lowest(t_list **stack_a, t_list **stack_b, char *operations)
+static void	push_lowest(t_list **stack_a, t_list **stack_b)
 {
 	int		index;
 	int		min;
@@ -36,16 +36,15 @@ static char	*push_lowest(t_list **stack_a, t_list **stack_b, char *operations)
 	{
 		if (index - (ft_lstsize(*stack_a) / 2) > 0)
 		{
-			operations = ft_strjoin(operations, "rra\n");
+			ft_printf("rra\n");
 			rev_rotate_stack(stack_a);
 		}
 		else
 		{
-			operations = ft_strjoin(operations, "ra\n");
+			ft_printf("ra\n");
 			rotate_stack(stack_a);
 		}
 	}
 	push_to_stack(stack_a, stack_b);
-	operations = ft_strjoin(operations, "pb\n");
-	return (operations);
+	ft_printf("pb\n");
 }

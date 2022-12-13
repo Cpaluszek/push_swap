@@ -6,12 +6,11 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:36:44 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/11 12:57:17 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/13 12:42:54 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// Note: protect functions ?
 
 // Send top of src stack to top of dst
 void	push_to_stack(t_list **src, t_list **dst)
@@ -24,7 +23,6 @@ void	push_to_stack(t_list **src, t_list **dst)
 }
 
 // Swap to numbers at the top of src
-// NOTE: swap function in libft
 void	swap_stack(t_list **src)
 {
 	t_list	*elem;

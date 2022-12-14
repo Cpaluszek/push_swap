@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:58:14 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 14:44:16 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:28:09 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static void	check_split_args(t_data *data, char **nbrs)
 		{
 			i = 0;
 			while (nbrs[i])
-				free(nbrs[i]);
+				free(nbrs[i++]);
 			free(nbrs);
 			arg_error();
 		}

@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 17:15:30 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 14:43:43 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:23:44 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	int		*values;
 
 	if (argc < 2)
-		return (-1);
+		return (0);
 	if (argc == 2)
 		values = parse_str(argv[1], &data);
 	else
@@ -44,5 +44,5 @@ int	main(int argc, char **argv)
 void	arg_error(void)
 {
 	ft_printf_fd(STDERR_FILENO, ERROR_STR);
-	exit(-1);
+	exit(0);
 }

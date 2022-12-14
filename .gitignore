@@ -3,3 +3,4 @@ push_swap
 *.py
 checker_Mac
 .vscode/
+*.dSYM/

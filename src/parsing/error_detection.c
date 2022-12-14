@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 09:13:38 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/13 13:04:59 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:29:25 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,19 @@ int	check_int_overflow(char *s)
 	int	len;
 
 	len = ft_strlen(s);
+	ft_printf("s = (%s) - len = %d\n", s, len);
 	if (len < 10)
 		return (0);
-	if (s[0] == '-' && ft_strncmp(INT_MIN_STR, s, len) < 0)
-		return (1);
-	else if (ft_strncmp(INT_MAX_STR, s, len) < 0)
-		return (1);
+	if (s[0] == '-')
+	{
+		if (len > 11 || ft_strncmp(INT_MIN_STR, s, len) < 0)
+			return (1);
+	}
+	else
+	{
+		if (len > 10 || ft_strncmp(INT_MAX_STR, s, len) < 0)
+			return (1);
+	}
 	return (0);
 }
 

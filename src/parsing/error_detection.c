@@ -6,7 +6,7 @@
 /*   By: cpalusze <cpalusze@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 09:13:38 by cpalusze          #+#    #+#             */
-/*   Updated: 2022/12/14 15:29:25 by cpalusze         ###   ########.fr       */
+/*   Updated: 2022/12/17 14:41:33 by cpalusze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	check_int_overflow(char *s)
 	int	len;
 
 	len = ft_strlen(s);
-	ft_printf("s = (%s) - len = %d\n", s, len);
 	if (len < 10)
 		return (0);
 	if (s[0] == '-')
